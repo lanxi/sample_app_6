@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   database:
-  username:lanxi
+  username: lanxi
   password: passwd
   host: localhost
   pool: 5
@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   database:
-  username:lanxi
+  username: lanxi
   password: passwd
   host: localhost
   pool: 5
