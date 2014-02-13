@@ -1,16 +1,16 @@
 development:
   adapter: postgresql
   database:
-  username: lanxi
-  password: passwd
+  username:
+  password:
   host: localhost
   pool: 5
 
 test:
   adapter: postgresql
   database:
-  username: lanxi
-  password: passwd
+  username:
+  password:
   host: localhost
   pool: 5
 
