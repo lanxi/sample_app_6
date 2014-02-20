@@ -1,0 +1,47 @@
+Script started on Sun Feb 16 10:49:26 2014
+[?1034hbash-3.2$ rails c
+Loading development environment (Rails 4.0.2)
+[?1034h2.0.0-p353 :001 > def string [K_shuffle(s)
+2.0.0-p353 :002?>   s.split('').shuffle.join
+2.0.0-p353 :003?>   end
+ => nil 
+2.0.0-p353 :004 > string_shuffle("foobar")
+ => "obfora" 
+2.0.0-p353 :005 > string_shuffle("foobar")
+ => "rofbao" 
+2.0.0-p353 :006 > 
+2.0.0-p353 :007 >   class[K[K[K[K[Kca[Klass strin[K[K[K[K[KString
+2.0.0-p353 :008?>   def shuffle
+2.0.0-p353 :009?>     self.split('').shuffle.join.s[K[K
+2.0.0-p353 :010?>     end
+2.0.0-p353 :011?>   end
+ => nil 
+2.0.0-p353 :012 > "foobar",shuffle[K[K[K[K[K[K[K[K.shuffle
+ => "aoborf" 
+2.0.0-p353 :013 > "foobar".shuffle
+ => "faorbo" 
+2.0.0-p353 :014 > person1 = {} }"}f}i}r}s}t}_}n}a}m}e}"}[1P}[1P}[1P}[1P}[1P}[1P}[1P}[1P}[1P}[1P}[1P}[1P}f}i}r}s}t}:} }[1P}[1P}[1P}[1P}[1P}[1P}[1P}:}f}i}r}s}t} }-}>}[1P}[1P}=}>} }"}J}a}k}e}"},} }"}[1P}:}L}[1P}l}a}s}t} }=}>} }"}S}h}e}p}h}a}r}d}"} }
+ => {:first=>"Jake", :last=>"Shephard"} 
+2.0.0-p353 :015 > person2 = { :first => "kate[K[K[K[KKate", :as[K[Klast => "Austen" }
+ => {:first=>"Kate", :last=>"Austen"} 
+2.0.0-p353 :016 > person3 = { :fii[Krst => "H[KJames", :L[Klast => "Ford"}[K }
+ => {:first=>"James", :last=>"Ford"} 
+2.0.0-p353 :017 > pat[Krams = { :father => person1, :mother => perspn[K[Kon2, :child => p erson 3 }[K[K[K[K3 }
+ => {:father=>{:first=>"Jake", :last=>"Shephard"}, :mother=>{:first=>"Kate", :last=>"Austen"}, :child=>{:first=>"James", :last=>"Ford"}} 
+2.0.0-p353 :018 >  params[:father][:first][K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kputs "hashes arev[K verr[Kified to be coo[Krrect"[1P[1@H[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C.t"[1Pt"[C."[C if  params[:father][ :first] == "Jake"
+Hashes are verified to be correct.
+ => nil 
+2.0.0-p353 :019 > puts "Hashes are verified to be correct." if  params[:father][::first] == "Jake"[1P"[1P"[1P"[1P"[1P[1P[1P[1P[1P[1@l[1@a[1@s[1@t[C[C[C[C[C[CA"u"s"t"e"n"[A[C[Carams = { :father => person1, :mother => person2, :child => pe[10Prson3 }[A[C[C[C[C[C[C[C[C[C[C[Cuts "Hashes are verified to be correct." if  params[:father][:last] == "Austen"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cther][:l[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cther][:la[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmther][:l[1@a[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cother][:[1@l[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+Hashes are verified to be correct.
+ => nil 
+2.0.0-p353 :020 > 
+2.0.0-p353 :021 >   #[K# merge(other_hash) -[K[K->new ha[K[K[K_hash:[K
+2.0.0-p353 :022 >   # merge(other_hash_[K){key,oldval,newval|block}->new_hash
+2.0.0-p353 :023 >   # Return a new hash containing the contenet[K[Kts of other_hash an d the contents of hsh. i F[K[K[KIf no block is specidie[K[K[Kg[Kfied, the value of[K[Kfor entries with dupo [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kpl icate keys will be that of other_hash. Otherwise the value for each duplicate ke y is determined by calling the block with the key, s[Kits value in hsh and its valu es[K o[Kin i[Kother_hash.
+2.0.0-p353 :024 >   exit
+bash-3.2$ exit
+exit
+
+Script done on Sun Feb 16 11:08:13 2014
