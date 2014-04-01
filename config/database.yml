@@ -6,7 +6,7 @@ development:
   host: localhost
   pool: 5
 
-test:
+test: &test
   adapter: postgresql
   database: sample_test
   username:
@@ -20,3 +20,5 @@ production:
   username:
   password: 
   host: localhost
+cucumber:
+  <<: *test
