@@ -42,4 +42,31 @@ describe "Micropost pages" do
       end
     end
   end
+
+  describe "as another user" do
+      before do
+        another_user = FactoryGirl.create(:user, email: "another@user.com")
+        visit signin_path
+        valid_signin another_user
+        visit user_path(user)
+      end
+
+      it { should_not have_content('delete') }
+    end
+  describe "micropost display" do
+    before do
+      50.times { FactoryGirl.create(:micropost, user: user) }
+      visit root_path
+    end
+
+    describe "pagination" do
+      it { should have_selector('div.pagination') }
+
+      it "should list each micropost" do
+        user.microposts.paginate(page: 1).each do |m|
+          page.should have_selector("li##{m.id}", text: m.content)
+        end
+      end
+    end
+  end
 end
