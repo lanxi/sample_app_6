@@ -133,6 +133,19 @@ describe User do
         expect(Micropost.where(id: micropost.id)).to be_empty
       end
     end
+ 
+    it "should destroy associated relationships" do
+      relationships = @user.relationships
+      @user.destroy
+      relationships.should be_empty
+    end
+
+    it "should destroy associated reverse relationships" do
+      reverse_relationships = @user.reverse_relationships
+      @user.destroy
+      reverse_relationships.should be_empty
+    end
+
    describe "status" do
     let(:unfollowed_post) do
         FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))

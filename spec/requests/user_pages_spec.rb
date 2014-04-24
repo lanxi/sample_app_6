@@ -46,21 +46,22 @@ describe "UserPages" do
   end
 
   
-describe "profile page" do
-  let(:user) { FactoryGirl.create(:user) }
-  let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
-  let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
+  describe "profile page" do
+    let(:user) { FactoryGirl.create(:user) }
 
-  before { visit user_path(user) }
+    let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+    let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
 
-  it { should have_content(user.name)}
-  it { should have_title(user.name)}
+    before { visit user_path(user) }
 
-  describe "microposts" do
-    it { should have_content(m1.content) }
-    it { should have_content(m2.content) }
-    it { should have_content(user.microposts.count) }
-  end
+    it { should have_content(user.name)}
+    it { should have_title(user.name)}
+
+    describe "microposts" do
+      it { should have_content(m1.content) }
+      it { should have_content(m2.content) }
+      it { should have_content(user.microposts.count) }
+    end
 
     describe "follow/unfollow buttons" do
       let(:other_user) { FactoryGirl.create(:user) }
@@ -110,7 +111,34 @@ describe "profile page" do
           it { should have_xpath("//input[@value='Follow']") }
         end
       end
-    end
+   end
+
+   describe "follower/following counts" do
+     let(:other_user) { FactoryGirl.create(:user) }
+     before do
+       user.follow!(other_user)
+       other_user.follow!(user)
+       visit user_path(user)
+     end
+     it { should have_link("1 following", href: following_user_path(user)) }
+     it { should have_link("1 followers", href: followers_user_path(user)) }
+
+     describe "after unfollowing other user" do
+       before do
+         user.unfollow!(other_user)
+         visit user_path(user)
+       end
+       it { should have_link("0 following", href: following_user_path(user)) }
+     end
+
+     describe "after unfollowed by other user" do
+       before do
+         other_user.unfollow!(user)
+         visit user_path(user)
+       end
+       it { should have_link("0 follower", href: followers_user_path(user)) }
+     end
+   end
 end
 
 describe "signup page" do
